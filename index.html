@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default buttonMinus"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default buttonPlus"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default buttonMinus"  id="minusBtn2"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center" id="itemPrice2" value="1">
+                           <button class="btn btn-default buttonPlus"  id="plusBtn2"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$<span id="phonePrice2">59</span></h5>
@@ -94,20 +94,18 @@
          document.getElementById("itemPrice").value = newItemPriceValue;
 
          const currentItemPrice = document.getElementById("phonePrice").innerText;
-         const currentItemPriceNumber = parseFloat(currentItemPrice.replace(/,/g, ""));
+         const currentItemPriceNumber = parseFloat(currentItemPrice);
          const updatedItemPriceNumber = currentItemPriceNumber + phonePriceOneNumber;
          document.getElementById("phonePrice").innerText = updatedItemPriceNumber;
 
          const currentSubTotal = document.getElementById("subTotalAmount").innerText;
          const currentSubTotalNumber = parseFloat(currentSubTotal);
-         console.log(currentSubTotalNumber);
          const updatedSubTotal = currentSubTotalNumber + phonePriceOneNumber;
          document.getElementById("subTotalAmount").innerText = updatedSubTotal;
 
          const currentTotalAmount = document.getElementById("totalAmountPrice").innerText;
          const currentTotalAmountNumber = parseFloat(currentTotalAmount);
          const updatedTotalAmount = currentTotalAmountNumber + phonePriceOneNumber;
-         console.log(updatedTotalAmount);
          document.getElementById("totalAmountPrice").innerText = updatedTotalAmount;
       });
 
@@ -128,15 +126,68 @@
 
          const currentSubTotal = document.getElementById("subTotalAmount").innerText;
          const currentSubTotalNumber = parseFloat(currentSubTotal);
-         console.log(currentSubTotalNumber);
          const updatedSubTotal = currentSubTotalNumber - phonePriceOneNumber;
          document.getElementById("subTotalAmount").innerText = updatedSubTotal;
 
          const currentTotalAmount = document.getElementById("totalAmountPrice").innerText;
          const currentTotalAmountNumber = parseFloat(currentTotalAmount);
          const updatedTotalAmount = currentTotalAmountNumber - phonePriceOneNumber;
-         console.log(updatedTotalAmount);
          document.getElementById("totalAmountPrice").innerText = updatedTotalAmount;
+      });
+
+      
+      const plusButton2 = document.getElementById("plusBtn2");
+
+      var phonePriceOne2 = document.getElementById("phonePrice2").innerText;
+      var phonePriceOneNumber2 = parseFloat(phonePriceOne2);
+
+      // Add to cart single item Iphone
+      plusButton2.addEventListener("click", function () {
+         const itemPriceValue2 = document.getElementById("itemPrice2").value;
+         const itemPriceValueNumber2 = parseFloat(itemPriceValue2);
+         const newItemPriceValue2 = itemPriceValueNumber2 + 1;
+         document.getElementById("itemPrice2").value = newItemPriceValue2;
+
+         const currentItemPrice2 = document.getElementById("phonePrice2").innerText;
+         const currentItemPriceNumber2 = parseFloat(currentItemPrice2);
+         const updatedItemPriceNumber2 = currentItemPriceNumber2 + phonePriceOneNumber2;
+         document.getElementById("phonePrice2").innerText = updatedItemPriceNumber2;
+
+         const currentSubTotal2 = document.getElementById("subTotalAmount").innerText;
+         const currentSubTotalNumber2 = parseFloat(currentSubTotal2);
+         const updatedSubTotal2 = currentSubTotalNumber2 + phonePriceOneNumber2;
+         document.getElementById("subTotalAmount").innerText = updatedSubTotal2;
+
+         const currentTotalAmount2 = document.getElementById("totalAmountPrice").innerText;
+         const currentTotalAmountNumber2 = parseFloat(currentTotalAmount2);
+         const updatedTotalAmount2 = currentTotalAmountNumber2 + phonePriceOneNumber2;
+         document.getElementById("totalAmountPrice").innerText = updatedTotalAmount2;
+      });
+
+
+      const minusButton2 = document.getElementById("minusBtn2");
+
+      // Remove to cart single item Iphone
+      minusButton2.addEventListener("click", function () {
+         const itemPriceValue2 = document.getElementById("itemPrice2").value;
+         const itemPriceValueNumber2 = parseFloat(itemPriceValue2);
+         const newItemPriceValue2 = itemPriceValueNumber2 - 1;
+         document.getElementById("itemPrice2").value = newItemPriceValue2;
+
+         const currentItemPrice2 = document.getElementById("phonePrice2").innerText;
+         const currentItemPriceNumber2 = parseFloat(currentItemPrice2);
+         const updatedItemPriceNumber2 = currentItemPriceNumber2 - phonePriceOneNumber2;
+         document.getElementById("phonePrice2").innerText = updatedItemPriceNumber2;
+
+         const currentSubTotal2 = document.getElementById("subTotalAmount").innerText;
+         const currentSubTotalNumber2 = parseFloat(currentSubTotal2);
+         const updatedSubTotal2 = currentSubTotalNumber2 - phonePriceOneNumber2;
+         document.getElementById("subTotalAmount").innerText = updatedSubTotal2;
+
+         const currentTotalAmount2 = document.getElementById("totalAmountPrice").innerText;
+         const currentTotalAmountNumber2 = parseFloat(currentTotalAmount2);
+         const updatedTotalAmount2 = currentTotalAmountNumber2 - phonePriceOneNumber2;
+         document.getElementById("totalAmountPrice").innerText = updatedTotalAmount2;
       });
 
 
