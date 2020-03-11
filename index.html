@@ -16,7 +16,7 @@
       <div class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
+               <div class="cart-item" id="cart-item1">
                   <div class="row">
                      <div class="col-md-7 center-item">
                         <img src="images/product-1.png" alt="">
@@ -30,12 +30,14 @@
                            <button class="btn btn-default" id="plusBtn"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="phonePrice">1219</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <button class="remove-btn" id="remove-btn1">
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </button>
                      </div>
                   </div>
                </div>
 
-               <div class="cart-item">
+               <div class="cart-item" id="cart-item2">
                   <div class="row">
                      <div class="col-md-7 center-item mx-auto">
                         <img src="images/product-2.png" alt="">
@@ -50,7 +52,9 @@
 
                         </div>
                         <h5>$<span id="phonePrice2">59</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <button class="remove-btn" id="remove-btn2">
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </button>
                      </div>
                   </div>
                </div>
@@ -139,6 +143,7 @@
       });
 
 
+
       const plusButton2 = document.getElementById("plusBtn2");
 
       var phonePriceOne2 = document.getElementById("phonePrice2").innerText;
@@ -197,6 +202,35 @@
       });
 
 
+      const removeButton = document.getElementById('remove-btn1');
+
+      removeButton.addEventListener('click', function () {
+         const cartRow = document.getElementById('cart-item1');
+         cartRow.style.display = 'none';
+         const rowPrice = parseFloat(document.getElementById('phonePrice').innerText);
+         const currentSubTotalPrice = parseFloat(document.getElementById('subTotalAmount').innerText);
+         const currentTotalAmountPrice = parseFloat(document.getElementById('totalAmountPrice').innerText);
+         const updatedSubTotalPrice = currentSubTotalPrice - rowPrice;
+         const updatedTotalAmountPrice = currentTotalAmountPrice - rowPrice;
+         document.getElementById('subTotalAmount').innerText = updatedSubTotalPrice;
+         document.getElementById('totalAmountPrice').innerText = updatedTotalAmountPrice;
+
+      });
+
+      const removeButton2 = document.getElementById('remove-btn2');
+
+      removeButton2.addEventListener('click', function () {
+         const cartRow = document.getElementById('cart-item2');
+         cartRow.style.display = 'none';
+         const rowPrice = parseFloat(document.getElementById('phonePrice2').innerText);
+         const currentSubTotalPrice = parseFloat(document.getElementById('subTotalAmount').innerText);
+         const currentTotalAmountPrice = parseFloat(document.getElementById('totalAmountPrice').innerText);
+         const updatedSubTotalPrice = currentSubTotalPrice - rowPrice;
+         const updatedTotalAmountPrice = currentTotalAmountPrice - rowPrice;
+         document.getElementById('subTotalAmount').innerText = updatedSubTotalPrice;
+         document.getElementById('totalAmountPrice').innerText = updatedTotalAmountPrice;
+
+      });
 
    </script>
 </body>
